@@ -93,7 +93,7 @@ urlpatterns = [
 ---
 
 ## 👨‍💻 Author
-Built with ☕, 🧠, and a lot of Tailwind by [your-name].
+Built with ☕, 🧠, and a lot of Tailwind by Long 😎🚀.
 
 ---
 
