@@ -1,0 +1,102 @@
+# 🗃️ Django Job Board
+
+A clean, modern job board web app built with Django and Tailwind CSS. Users can browse job postings, view detailed job info, and apply with a custom resume upload form.
+
+---
+
+## 🚀 Features
+
+- View available job postings
+- Job detail pages with full description
+- Submit applications with name, email, message, and CV upload (PDF)
+- Admin panel to manage jobs and applications
+- TailwindCSS for a clean and responsive UI
+- File upload system using Django `FileField`
+
+---
+
+## 🛠️ Tech Stack
+
+- Python 3
+- Django 4+
+- Tailwind CSS (via CDN)
+- SQLite (default)
+- Crispy Forms + Tailwind template pack
+
+---
+
+## 📦 Setup Instructions
+
+1. **Clone this repo:**
+   ```bash
+   git clone https://github.com/your-username/django-job-board.git
+   cd django-job-board
+   ```
+
+2. **Create virtual environment:**
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate  # On Windows
+   source venv/bin/activate  # On Mac/Linux
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run migrations:**
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
+5. **Run server:**
+   ```bash
+   python manage.py runserver
+   ```
+
+6. **Visit app:**
+   Open browser and go to [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 📁 File Uploads (Resume)
+
+Uploaded resumes are stored in the `media/resumes/` folder. Be sure to create that folder and configure Django settings:
+
+```python
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+```
+
+In `urls.py`:
+```python
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    # ...
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
+
+---
+
+## ✅ To-Do / Ideas
+
+- ✅ Apply form with file upload (CV)
+- 🔜 Add search/filter by company or salary
+- 🔜 Admin download links for resumes
+- 🔜 Pagination and SEO meta tags
+- 🔜 Deploy on Render / Railway / Vercel
+
+---
+
+## 👨‍💻 Author
+Built with ☕, 🧠, and a lot of Tailwind by [your-name].
+
+---
+
+## 📄 License
+MIT License. Do whatever you want, but credit is always appreciated 🙌
+
